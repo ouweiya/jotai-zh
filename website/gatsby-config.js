@@ -120,20 +120,20 @@ module.exports = {
     //   },
     // },
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: ['G-WWJ8XD0QP0'],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: ['G-WWJ8XD0QP0'],
+    //     gtagConfig: {
+    //       anonymize_ip: true,
+    //       cookie_expires: 0,
+    //     },
+    //     pluginConfig: {
+    //       head: false,
+    //       respectDNT: true,
+    //     },
+    //   },
+    // },
   ],
   flags: {
     DEV_SSR: false,

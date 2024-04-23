@@ -38,6 +38,9 @@ export const Sidebar = ({ showDocs = false }) => {
           <Button icon="github" to="https://github.com/pmndrs/jotai" external>
             仓库
           </Button>
+          <Button icon="github" to="https://github.com/ouweiya/jotai-zh/tree/translation/zh" external>
+            中文仓库
+          </Button>
           <Button icon="npm" to="https://www.npmjs.com/package/jotai" external>
             包
           </Button>
