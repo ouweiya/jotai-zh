@@ -12,6 +12,16 @@ export const Docs = ({ className = '', ...rest }) => {
   const allDocs = data.allMdx.nodes.filter(checkDocs).sort(sortDocs);
   const navLinks = parseDocs(allDocs);
 
+  const translation = {
+    core: '核心',
+    utilities: '实用程序',
+    extensions: '扩展',
+    guides: '指南',
+    tools: '工具',
+    basics: '基础',
+    recipes: '食谱',
+  };
+
   return (
     <div className={cx('my-8 space-y-8', className)} {...rest}>
       {navLinks.map((section) => (
@@ -19,7 +29,7 @@ export const Docs = ({ className = '', ...rest }) => {
           {section.title && (
             <div className="relative -left-0.5 flex items-center gap-1">
               <span className="text-base font-bold uppercase tracking-widest text-gray-350 dark:text-white">
-                {section.title}
+                {translation[section.title]}
               </span>
               <span className="relative top-px">
                 <Icon icon="chevron" className="h-auto w-4 text-gray-350" />

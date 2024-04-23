@@ -65,7 +65,7 @@
 
 .prose ol,
 .prose ul {
-  @apply my-2 space-y-1 pl-5 text-sm font-normal leading-normal text-gray-600 dark:text-gray-400 sm:text-base lg:text-lg;
+  @apply my-2 space-y-1 pl-5 text-[15px] font-normal leading-normal text-gray-600 dark:text-gray-400 ;
 }
 
 .prose ol {
@@ -81,7 +81,7 @@
 }
 
 .prose p {
-  @apply mt-1 text-sm leading-normal text-gray-600 dark:text-gray-400 sm:text-base lg:text-lg;
+  @apply mt-1 text-sm leading-normal text-gray-600 dark:text-gray-400 sm:text-base;
 }
 
 .prose p + p {
