@@ -47,9 +47,9 @@ export const Support = () => {
       <div className="flex">
         <div className="w-1/3 border-r border-gray-200 pr-8 dark:border-gray-800">
           <div className="text-2xl font-bold leading-tight text-gray-350 dark:text-gray-200 lg:text-3xl">
-            Self-help
+            自助服务
           </div>
-          <div className="text-base">Check out these helpful resources.</div>
+          <div className="text-base">查看这些有用的资源。</div>
           <div className="mt-4 flex flex-col gap-4">
             <Button
               to="https://egghead.io/courses/manage-application-state-with-jotai-atoms-2c3a29f0"
@@ -57,9 +57,9 @@ export const Support = () => {
               bold
               external
             >
-              Manage Application State with Jotai Atoms
+             视频教程，使用 Jotai 管理应用状态
               <div className="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 overflow-hidden rounded bg-gray-800 px-1.5 pt-[4px] pb-[3px] text-xs font-semibold uppercase leading-none text-white dark:bg-gray-200 dark:text-black">
-                Free
+                免费
               </div>
             </Button>
             <Button
@@ -68,7 +68,7 @@ export const Support = () => {
               bold
               external
             >
-              Learn Simplified Jotai
+              学习简化的 Jotai
             </Button>
             <Button
               to="https://daishi.gumroad.com/l/philosophy-of-jotai-1"
@@ -76,22 +76,21 @@ export const Support = () => {
               bold
               external
             >
-              Philosophy of Jotai: Part 1
+              Jotai 的哲学：第一部分
             </Button>
           </div>
         </div>
         <div className="relative w-2/3 pl-8">
           <div>
             <div className="text-2xl font-bold leading-tight text-gray-350 dark:text-gray-200 lg:text-3xl">
-              Professional support
+              专业支持
             </div>
             <div className="text-base">
-              Need more help? Request an expert code architecture review from Daishi Kato, the
-              author of Jotai.
+              需要更多帮助？请求来自 Jotai 作者 Daishi Kato 的专家代码架构审查。
             </div>
             <div className="mt-4 flex flex-col gap-4">
               <label>
-                <div>Name</div>
+                <div>姓名</div>
                 <input
                   type="text"
                   value={name}
@@ -101,7 +100,7 @@ export const Support = () => {
                 />
               </label>
               <label>
-                <div>Email</div>
+                <div>电子邮件</div>
                 <input
                   type="email"
                   value={email}
@@ -111,7 +110,7 @@ export const Support = () => {
                 />
               </label>
               <label>
-                <div>Message</div>
+                <div>消息</div>
                 <textarea
                   value={message}
                   onChange={(event) => setMessage(event.currentTarget.value)}
@@ -120,7 +119,7 @@ export const Support = () => {
                 />
               </label>
               <label className="sr-only">
-                <div>Don’t fill this out if you’re human:</div>
+                <div>如果你是人类，请不要填写这个：</div>
                 <input
                   type="text"
                   value={honey}
@@ -129,14 +128,14 @@ export const Support = () => {
               </label>
               <div className={cx(hasSubmitted && 'opacity-0')}>
                 <Button icon="message" onClick={handleSubmit} dark bold className="dark:!bg-black">
-                  Send inquiry
+                  发送询问
                 </Button>
               </div>
             </div>
           </div>
           {hasSubmitted && (
             <div className="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-gray-100 text-3xl font-bold leading-tight text-gray-350 dark:bg-gray-900 dark:text-gray-200 lg:text-4xl">
-              {hasReceived ? <span>Thanks!</span> : <span>Sending...</span>}
+              {hasReceived ? <span>谢谢！</span> : <span>发送中...</span>}
             </div>
           )}
         </div>
@@ -156,12 +155,7 @@ export const Support = () => {
             />
           </a>
           <div className="text-sm leading-tight">
-            <span className="font-bold">Daishi Kato</span> is a software engineer who is passionate
-            about open source software. He has been a researcher of peer-to-peer networks and web
-            technologies for decades. His interest is in engineering, and he has been working with
-            start-ups for the last 5 years. He has been actively involved in open source software
-            since the 90s, and his latest work focuses on developing various libraries with
-            JavaScript and React.
+            <span className="font-bold">Daishi Kato</span> 是一位对开源软件充满热情的软件工程师。他已经是对等网络和网络技术的研究者几十年了。他对工程学有兴趣，并且在过去的5年里一直在与初创公司合作。他自90年代以来一直积极参与开源软件的工作，他的最新工作集中在使用 JavaScript 和 React 开发各种库。
           </div>
         </div>
       </div>

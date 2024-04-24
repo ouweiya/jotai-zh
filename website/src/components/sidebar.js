@@ -30,7 +30,7 @@ export const Sidebar = ({ showDocs = false }) => {
             </div>
           )}
           <Button icon="chalkboard" to="https://tutorial.jotai.org" external>
-            教程
+            游乐场
           </Button>
           <Button icon="help" onClick={() => setShowHelp(true)}>
             支持
