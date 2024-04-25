@@ -209,7 +209,7 @@ const allAtom = waitForAll([fooAtom, barAtom])
 const allAtom = atom((get) => Promise.all([get(fooAtom), get(barAtom)]))
 ```
 
-注意，在渲染函数中创建 atom 可能会导致[无限循环](../api/atom.mdx#note-about-creating-an-atom-in-render-function)
+注意，在渲染函数中创建 atom 可能会导致[无限循环](../core/atom.mdx#note-about-creating-an-atom-in-render-function)
 
 #### `splitAtom` 工具（或其他一些工具）与异步 atoms {#`splitatom`-util-(or-some-other-utils)-with-async-atoms}
 
