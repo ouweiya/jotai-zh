@@ -19,7 +19,7 @@ const myStore = createStore()
 const countAtom = atom(0)
 myStore.set(countAtom, 1)
 const unsub = myStore.sub(countAtom, () => {
-  console.log('countAtom value is changed to', myStore.get(countAtom))
+  console.log('countAtom 值已更改为', myStore.get(countAtom))
 })
 // 使用 unsub() 来取消订阅
 
