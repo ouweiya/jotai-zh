@@ -65,6 +65,7 @@ export const H3 = ({ children }) => {
 };
 
 export const H4 = ({ children }) => {
+  console.log('children', children);
   const { title, anchor } = parseMarkdownHeader(children);
   // const anchor = getAnchor(anchorRaw);
   const link = `#${anchor}`;

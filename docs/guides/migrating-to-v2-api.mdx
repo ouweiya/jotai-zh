@@ -171,7 +171,7 @@ const store = createStore()
   useAtom(..., { store })
 ```
 
-#### `abortableAtom` 工具 {#`abortableatom`-util}
+#### abortableAtom 工具 {#abortableatom-util}
 
 你不再需要之前的 `abortableAtom` 工具，
 因为现在普通的 `atom` 已经支持了。
@@ -192,7 +192,7 @@ const asyncAtom = atom(async (get, { signal }) => {
 }
 ```
 
-#### `waitForAll` 工具 {#`waitforall`-util}
+#### waitForAll 工具 {#waitforall-util}
 
 你不再需要之前的 `waitForAll` 工具，
 因为我们可以使用原生的 Promise API。
@@ -211,7 +211,7 @@ const allAtom = atom((get) => Promise.all([get(fooAtom), get(barAtom)]))
 
 注意，在渲染函数中创建 atom 可能会导致[无限循环](../core/atom.mdx#note-about-creating-an-atom-in-render-function)
 
-#### `splitAtom` 工具（或其他一些工具）与异步 atoms {#`splitatom`-util-(or-some-other-utils)-with-async-atoms}
+#### splitAtom 工具（或其他一些工具）与异步 atoms {#splitatom-util-(or-some-other-utils)-with-async-atoms}
 
 `splitAtom` 工具只接受同步的 atoms。
 你需要在传递之前解包异步 atoms。
