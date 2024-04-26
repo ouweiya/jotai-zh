@@ -1,9 +1,28 @@
 import { getAnchor } from '../utils/index.js';
+import React from 'react';
 
-function parseMarkdownHeader(text) {
-  if (typeof text !== 'string') {
-    return text;
-  }
+function getTextContent(children) {
+  console.log('children', children);
+  let text = '';
+  React.Children.toArray(children).forEach((child) => {
+    if (typeof child === 'string') {
+      text += child;
+    } else if (React.isValidElement(child)) {
+      if (child.props.mdxType === 'inlineCode' && child.props.children) {
+        text += `\`${getTextContent(child.props.children)}\``;
+      } else if (child.props.children) {
+        text += getTextContent(child.props.children);
+      }
+    }
+  });
+  return text;
+}
+
+function parseMarkdownHeader(value) {
+  const text = getTextContent(value);
+  // if (typeof text !== 'string') {
+  //   return text;
+  // }
   // 使用正则表达式匹配标题和描点
   const match = text.match(/(.*) {#(.*)}/);
 
@@ -15,7 +34,7 @@ function parseMarkdownHeader(text) {
     title = text; // 如果没有描点，整个文本就是标题
     anchor = text;
   }
-
+  console.log('title', title, 'anchor', anchor);
   return { title, anchor };
 }
 
@@ -32,7 +51,9 @@ export const H2 = ({ children }) => {
 };
 
 export const H3 = ({ children }) => {
+  // console.log('children', children);
   const { title, anchor } = parseMarkdownHeader(children);
+  // console.log('title', title);
   // const anchor = getAnchor(anchorRaw);
   const link = `#${anchor}`;
 
