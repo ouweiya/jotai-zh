@@ -103,13 +103,13 @@ const derivedAtomWithWriteOnly = atom(null, write)
 
 原子有两种类型：可写原子和只读原子。原始原子总是可写的。如果指定了`write`，派生原子就是可写的。原始原子的`write`等同于`React.useState`的`setState`。
 
-### `debugLabel`属性 {#`debuglabel`-property}
+### debugLabel {#debuglabel}
 
 创建的原子配置可以有一个可选的属性`debugLabel`。调试标签用于在调试中显示原子。有关更多信息，请参阅[调试指南](../guides/debugging.mdx)。
 
 注意：虽然调试标签不必是唯一的，但通常建议使它们可区分。
 
-### `onMount`属性 {#`onmount`-property}
+### onMount {#onmount}
 
 创建的原子配置可以有一个可选的属性`onMount`。`onMount`是一个函数，它接受一个函数`setAtom`并可选地返回`onUnmount`函数。
 
@@ -164,7 +164,7 @@ derivedAtom.onMount = (setAtom) => {
 
 自Jotai v2起，`read`函数有第二个参数`options`。
 
-#### `options.signal` {#`options.signal`}
+#### options.signal {#options.signal}
 
 它使用[AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)，以便你可以中止异步函数。
 在新的计算（调用`read`函数）开始之前触发中止。
@@ -193,7 +193,7 @@ const writableDerivedAtom = atom(
 
 参见下面的`fetch`使用示例。
 
-#### `options.setSelf` {#`options.setself`}
+#### options.setSelf {#options.setself}
 
 它是一个特殊的函数，用于调用自身原子的写函数。
 

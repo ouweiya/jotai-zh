@@ -32,7 +32,9 @@ export const H2 = ({ children }) => {
 };
 
 export const H3 = ({ children }) => {
+  // console.log('children', children);
   const { title, anchor } = parseMarkdownHeader(children);
+  // console.log('title', title);
   // const anchor = getAnchor(anchorRaw);
   const link = `#${anchor}`;
 
@@ -44,6 +46,7 @@ export const H3 = ({ children }) => {
 };
 
 export const H4 = ({ children }) => {
+  console.log('children', children);
   const { title, anchor } = parseMarkdownHeader(children);
   // const anchor = getAnchor(anchorRaw);
   const link = `#${anchor}`;
