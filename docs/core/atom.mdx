@@ -103,13 +103,13 @@ const derivedAtomWithWriteOnly = atom(null, write)
 
 原子有两种类型：可写原子和只读原子。原始原子总是可写的。如果指定了`write`，派生原子就是可写的。原始原子的`write`等同于`React.useState`的`setState`。
 
-### `debugLabel`属性 {#`debuglabel`-property}
+### `debugLabel` 属性 {#`debuglabel`-property}
 
 创建的原子配置可以有一个可选的属性`debugLabel`。调试标签用于在调试中显示原子。有关更多信息，请参阅[调试指南](../guides/debugging.mdx)。
 
 注意：虽然调试标签不必是唯一的，但通常建议使它们可区分。
 
-### `onMount`属性 {#`onmount`-property}
+### `onMount` 属性 {#`onmount`-property}
 
 创建的原子配置可以有一个可选的属性`onMount`。`onMount`是一个函数，它接受一个函数`setAtom`并可选地返回`onUnmount`函数。
 
