@@ -2,7 +2,6 @@ import { getAnchor } from '../utils/index.js';
 import React from 'react';
 
 function getTextContent(children) {
-  console.log('children', children);
   let text = '';
   React.Children.toArray(children).forEach(child => {
     if (typeof child === 'string') {
@@ -54,7 +53,6 @@ export const H3 = ({ children }) => {
 };
 
 export const H4 = ({ children }) => {
-  console.log('children', children);
   const { title, anchor } = parseMarkdownHeader(children);
   // const anchor = getAnchor(anchorRaw);
   const link = `#${anchor}`;
