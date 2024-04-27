@@ -15,7 +15,7 @@ npm i immer jotai-immer
 
 ## atomWithImmer {#atomwithimmer}
 
-`atomWithImmer` 创建一个新的 atom，类似于常规的 [`atom`](../core/atom.mdx) [atom]，但具有不同的 `writeFunction`。在这个包中，我们没有只读的 atoms，因为这些函数的目的是 immer produce(可变性)函数。
+`atomWithImmer` 创建一个新的 atom，类似于常规的 [`atom`](../core/atom.mdx)，但具有不同的 `writeFunction`。在这个包中，我们没有只读的 atoms，因为这些函数的目的是 immer produce(可变性)函数。
 writeFunction 的签名是 `(get, set, update: (draft: Draft<Value>) => void) => void`。
 
 ```jsx
