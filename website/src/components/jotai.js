@@ -27,7 +27,7 @@ export const Jotai = ({ isDocsPage = false, small = false, ...rest }) => {
         )}
       >
         <div className={cx(!small ? 'text-lg 2xl:text-xl' : 'text-xs', 'whitespace-nowrap')}>
-          状态
+        Jotai
         </div>
         <div
           className={cx(!small ? 'text-sm leading-snug 2xl:text-base' : 'text-xs leading-tight')}
