@@ -121,7 +121,7 @@ const derivedAtomWithWriteOnly = atom(null, write)
 ```js
 const anAtom = atom(1)
 anAtom.onMount = (setAtom) => {
-  console.log('atom is mounted in provider')
+  console.log('atom已在提供者中挂载')
   setAtom(c => c + 1) // 在装载时增加计数
   return () => { ... } // 返回可选的onUnmount函数
 }
