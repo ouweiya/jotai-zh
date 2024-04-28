@@ -155,7 +155,7 @@ const togglesAtom = atom([atom(false), atom(false), atom(false)])
 
 const List = () => {
   const [toggles] = useAtom(togglesAtom)
-  return toggles.map((val, index) => <Item id={index} val={val} />)
+  return toggles.map((val, index) => <Item index={index} val={val} />)
 }
 ```
 
