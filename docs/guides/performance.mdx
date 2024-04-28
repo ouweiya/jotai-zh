@@ -129,13 +129,18 @@ const togglesAtom = atom([false, false, false])
 const Item = ({ index, val }) => {
   const setToggles = useSetAtom(togglesAtom)
   const onPress = () => {
-    setToggles(old => [...old, [index]: !val])
+    // setToggles(old => [...old, [index]: !val])
+    setToggles(old => {
+      const newArray = [...old];
+      newArray[index] = !newArray[index];
+      return newArray;
+    })
   }
 }
 
 const List = () => {
   const [toggles] = useAtom(togglesAtom)
-  return toggles.map((val, index) => <Item id={index} val={val} />)
+  return toggles.map((val, index) => <Item index={index} val={val} />)
 }
 ```
 
@@ -146,22 +151,22 @@ const List = () => {
 现在让我们尝试在第一次渲染时记住值
 
 ```tsx
+const togglesAtom = atom([atom(false), atom(false), atom(false)])
+
 const List = () => {
-  const [toggles] = useMemo(() => useAtom(togglesAtom), [])
-  return toggles.map((val, index) => <Item id={index} initialValue={val} />)
+  const [toggles] = useAtom(togglesAtom)
+  return toggles.map((val, index) => <Item id={index} val={val} />)
 }
 ```
 
 但现在这意味着我们必须在每个 `Item` 中处理变化
 
 ```tsx
-const Item = ({ index, initialValue }) => {
-  const setToggles = useSetAtom(togglesAtom)
-  const [toggle, setToggle] = React.useMemo(() => useAtom(atom(val)), [])
+const Item = ({ index, val }) => {
+  const [toggle, setToggle] = useAtom(val)
 
   const onPress = () => {
     setToggle(!toggle) // 本地更新
-    setToggles(old => [...old, [index]: !val]) // 更新主原子
   }
 }
 ```

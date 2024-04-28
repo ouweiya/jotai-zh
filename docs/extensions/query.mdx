@@ -30,18 +30,18 @@ npm i jotai-tanstack-query @tanstack/query-core wonka
 你可以在你的应用中渐进式地采用 `jotai-tanstack-query`。它不是全有或全无的解决方案。你只需要确保你正在使用相同的 QueryClient 实例。[QueryClient 设置](#referencing-the-same-instance-of-query-client-in-your-project)。
 
 ```jsx
-# 现有的 useQueryHook {#existing-usequeryhook}
-  const { data, isPending, isError } = useQuery({
-    queryKey: ['todos'],
-    queryFn: fetchTodoList
-  });
+// 现有的 useQueryHook
+const { data, isPending, isError } = useQuery({
+  queryKey: ['todos'],
+  queryFn: fetchTodoList
+});
 
-# jotai-tanstack-query {#jotai-tanstack-query}
-  const todosAtom = atomWithQuery(() => ({
-    queryKey: ['todos'],
-  }))
+// jotai-tanstack-query
+const todosAtom = atomWithQuery(() => ({
+  queryKey: ['todos'],
+}))
 
-  const [{ data, isPending, isError }] = useAtom(todosAtom)
+const [{ data, isPending, isError }] = useAtom(todosAtom)
 
 ```
 

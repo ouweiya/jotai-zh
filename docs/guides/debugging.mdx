@@ -72,6 +72,7 @@ const countAtom = atom(0)
 function Counter() {
   const [count, setCount] = useAtom(countAtom)
   useAtomDevtools(countAtom)
+}
 ```
 
 现在如果我们尝试 `setCount`，我们可以看到 Redux Dev Tools 立即记录了这些更改。
