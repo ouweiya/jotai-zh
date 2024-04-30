@@ -37,11 +37,11 @@ const arrAtom = atom<string[]>([])
 
 ```ts
 
-# 只读派生 atoms {#read-only-derived-atoms}
+// 只读派生 atoms
 const readOnlyAtom = atom((get) => get(numAtom))
 const asyncReadOnlyAtom = atom(async (get) => await get(someAsyncAtom))
 
-# 只写 atoms {#write-only-atoms}
+// 只写 atoms
 const writeOnlyAtom = atom(null, (_get, set, str: string) => set(fooAtom, str))
 const multipleArgumentsAtom = atom(
   null,
@@ -49,7 +49,7 @@ const multipleArgumentsAtom = atom(
     set(fooAtom, Math.max(valueOne, valueTwo))
 );
 
-# 读/写 atoms {#read/write-atoms}
+// 读/写 atoms
 const readWriteAtom = atom(
   (get) => get(strAtom),
   (_get, set, num: number) => set(strAtom, String(num))

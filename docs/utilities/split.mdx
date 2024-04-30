@@ -18,7 +18,7 @@ type SplitAtom = <Item>(arrayAtom: PrimitiveAtom<Array<Item>>): Atom<Array<Primi
 ```
 
 此外，`splitAtom` 返回的原子在 `write` 方向包含一个调度函数（自 v1.6.4 起），
-这在你想要一种简单的方式来修改原始原子的操作，如 `remove`、`insert` 和 `move` 时非常有用。
+这在你想要一种简单的方式来修改原始原子的操作，如`remove`、`insert`和`move`时非常有用。
 
 请参阅下面的示例以了解使用方法。
 

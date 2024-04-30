@@ -7,8 +7,7 @@ nav: 7.11
 但它也非常灵活，你可以组合多个原子
 来实现一个功能。
 
-> 再次注意，`atom()` 创建一个原子配置，这是一个对象
-> 用于定义原子的行为。
+> 再次注意，atom() 创建的是一个原子配置，这是一个用于定义原子行为的对象。
 
 让我们回顾一下我们如何派生一个原子。
 
@@ -21,8 +20,7 @@ export const textAtom = atom('hello')
 export const textLenAtom = atom((get) => get(textAtom).length)
 ```
 
-`textLenAtom` 被称为只读原子，因为
-它没有定义 `write` 函数。
+`textLenAtom` 被称为只读原子，因为它没有定义 `write` 函数。
 
 以下是另一个带有 `write` 函数的简单示例：
 
@@ -35,16 +33,13 @@ export const textUpperCaseAtom = atom(
 ```
 
 在这种情况下，`textUpperCaseAtom` 能够设置原始的 `textAtom`。
-所以，我们只能导出 `textUpperCaseAtom` 并可以隐藏
-`textAtom` 在一个较小的范围内。
+所以，我们只能导出 `textUpperCaseAtom` 并可以隐藏 `textAtom` 在一个较小的范围内。
 
 现在，让我们看一些真实的例子。
 
 ### 覆盖默认原子值 {#overriding-default-atom-values}
 
-假设我们有一个只读原子。
-显然只读原子是不可写的，但我们可以组合两个原子
-来覆盖只读原子值。
+假设我们有一个只读原子。 显然只读原子是不可写的，但我们可以组合两个原子来覆盖只读原子值。
 
 ```js
 const rawNumberAtom = atom(10.1) // 可以被导出
