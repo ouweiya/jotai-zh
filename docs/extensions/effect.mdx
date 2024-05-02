@@ -85,7 +85,7 @@ function MyComponent() {
   在卸载或重新评估之前，会调用清理函数。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -101,7 +101,7 @@ function MyComponent() {
   当 `atomEffect` 通过 `set` 改变它正在观察的值时，不会重新运行。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -119,7 +119,7 @@ function MyComponent() {
   对于同步和异步的使用场景，都支持使用 `set.recurse` 进行递归，但在清理函数中不支持。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -140,7 +140,7 @@ function MyComponent() {
   使用 `get.peek` 读取原子数据，而不订阅更改。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -157,7 +157,7 @@ function MyComponent() {
   `effectFn` 在下一个可用的微任务中运行，所有 Jotai 的同步读取评估完成后。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -182,7 +182,7 @@ function MyComponent() {
   对 `atomEffect` 原子依赖的多个同步更新被批量处理。效果是以最终值作为单个原子事务运行。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -206,7 +206,7 @@ function MyComponent() {
   `atomEffect` 只在其在应用程序中被挂载时才处于活动状态。这可以防止在不需要时进行不必要的计算和副作用。你可以通过卸载它来禁用效果。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -223,7 +223,7 @@ function MyComponent() {
   `atomEffect` 在状态改变时只运行一次，无论它被挂载了多少次。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -252,7 +252,7 @@ function MyComponent() {
   在效果的同步评估期间，使用 `get` 访问的所有原子都会被添加到原子的内部依赖图中。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -271,14 +271,14 @@ function MyComponent() {
   对于异步效果，你应该使用一个中止控制器来取消待处理的获取请求和承诺。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
   atomEffect((get, set) => {
     const count = get(countAtom) // countAtom 是一个原子依赖
     const abortController = new AbortController()
-    ;(async () => {
+    (async () => {
       try {
         await delay(1000)
         abortController.signal.throwIfAborted()
@@ -304,7 +304,7 @@ function MyComponent() {
   在清理函数中使用 `get` 访问原子不会将它们添加到原子的内部依赖图中。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
@@ -328,7 +328,7 @@ function MyComponent() {
   每次运行时都会重新计算依赖图。如果在当前运行期间没有监视某个原子，那么它将不会在当前运行的依赖图中。只有被积极监视的原子才被视为依赖项。
 
   <!-- prettier-ignore -->
-  <details style="cursor: pointer; user-select: none;">
+  <details style="cursor: pointer; ">
     <summary>示例</summary>
 
   ```js
