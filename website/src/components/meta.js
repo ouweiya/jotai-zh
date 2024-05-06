@@ -1,13 +1,13 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, withPrefix } from 'gatsby';
 
-export const Meta = ({ lang = 'en', title, description, uri }) => {
+export const Meta = ({ lang = 'zh-Hans', title, description, uri }) => {
   const data = useStaticQuery(staticQuery);
 
   const { site } = data;
 
   const siteTitle = site.siteMetadata.title;
   const siteUrl = site.siteMetadata.siteUrl;
-  const siteIcon = `/favicon.svg`;
+  const siteIcon = withPrefix('/favicon.svg');
   const socialMediaCardImage = `https://cdn.candycode.com/jotai/jotai-opengraph-v2.png`;
   const shortName = site.siteMetadata.shortName;
 
