@@ -7,11 +7,11 @@
 }
 
 .prose h1 {
-  @apply text-4xl font-extrabold leading-tight tracking-tight text-black dark:text-gray-50 lg:text-7xl lg:tracking-tighter;
+  @apply text-4xl font-extrabold leading-tight tracking-tight text-gray-700 dark:text-gray-200 lg:text-7xl lg:tracking-tighter;
 }
 
 .prose h2 {
-  @apply text-2xl font-bold leading-tight text-gray-350 dark:text-gray-200 lg:text-3xl;
+  @apply text-2xl font-bold leading-tight text-gray-600 dark:text-gray-200 lg:text-3xl;
 }
 
 .prose .tabs h2 {
@@ -81,7 +81,7 @@
 }
 
 .prose p {
-  @apply mt-1 text-sm leading-normal text-gray-600 dark:text-gray-400 sm:text-base;
+  @apply mt-1 text-sm leading-normal text-gray-700 dark:text-gray-400 sm:text-base;
 }
 
 .prose p + p {

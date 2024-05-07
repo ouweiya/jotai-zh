@@ -28,7 +28,7 @@ export const Docs = ({ className = '', ...rest }) => {
         <div key={section.title || i} className="space-y-2">
           {section.title && (
             <div className="relative -left-0.5 flex items-center gap-1">
-              <span className="text-base font-bold uppercase tracking-widest text-gray-350 dark:text-white">
+              <span className="text-base font-bold uppercase tracking-widest text-gray-700 dark:text-white">
                 {translation[section.title]}
               </span>
               <span className="relative top-px">
